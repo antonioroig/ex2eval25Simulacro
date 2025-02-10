@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Avanzada</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Lista de Tareas Avanzada</h1>
+
+    <div id="contenedor-botones">
+        <button type="button" id="borraStorage">BORRAR TAREAS / STORAGE</button>
+        <button type="button" id="cargar-api">Cargar Tareas API</button>
+        <button type="button" id="guardar-api">Guardar Tareas API</button>
+        <button type="button" id="obtener-fecha">Obtener Fecha y Hora Actual</button>
+    </div>
+    
+
+    <!-- Contenedor principal para el formulario y el botón -->
+    <div id="contenedor-principal">
+        <form id="formulario-tarea">
+            <input type="text" id="descripcion-tarea" placeholder="Descripción de la tarea" required>
+            <input type="date" id="fecha-tarea" placeholder="dd-mm-yyyy" 
+            value="" min="1900-01-01" max="2500-01-01" required>
+            <button type="submit">Agregar Tarea</button>
+        </form>
+    </div>
+
+    <!-- Lista de tareas -->
+    <ul id="lista-tareas"></ul>
+
+    <!-- Template para edición -->
+    <template id="plantilla-edicion">
+        <form class="formulario-edicion">
+            <input type="text" class="editar-descripcion" required>
+            <input type="date" class="editar-fecha" placeholder="dd-mm-yyyy" value="" min="1900-01-01" max="2500-01-01" required>
+            <button type="submit">Guardar</button>
+            <button type="button" class="cancelar-edicion">Cancelar</button>
+        </form>
+    </template>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

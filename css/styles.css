@@ -1,0 +1,186 @@
+/* css/styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contenedor-botones {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    gap: 10px;
+}
+
+#borraStorage {
+    background: #e74c3c;
+    /* Mantener estilo anterior */
+}
+
+#cargar-api {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#guardar-api {
+    background: #2ecc71;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#cargar-api:hover {
+    background: #2980b9;
+}
+
+#guardar-api:hover {
+    background: #27ae60;
+}
+
+#contenedor-principal {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#borraStorage {
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+}
+
+#obtener-fecha {
+    width: 100%;
+    background: #f39c12;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#obtener-fecha:hover {
+    background: #e67e22;
+}
+
+
+#borraStorage:hover {
+    background: #c0392b;
+}
+
+#formulario-tarea {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+}
+
+#formulario-tarea input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#formulario-tarea button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#formulario-tarea button:hover {
+    background: #219a52;
+}
+
+#lista-tareas {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+#lista-tareas li {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* <-- Cambio: elementos en columna */
+    align-items: flex-start; /* <-- Cambio: alineación a la izquierda */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}.contenido-tarea {
+    flex-grow: 1;
+    margin-right: 15px;
+    margin-bottom: 10px; /* <-- Nuevo: margen inferior */
+}.tarea-title {
+    font-size: 1.1em; /* <-- Nuevo: tamaño de fuente del título */
+    font-weight: bold;
+    margin-bottom: 5px; /* <-- Nuevo: margen inferior */
+}.tarea-date {
+    color: #888;
+    font-size: 0.9em;
+}.acciones-tarea {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px; /* <-- Nuevo: margen superior */
+}.tarea-completada {
+    text-decoration: line-through;
+    color: lightgray;
+}.acciones-tarea button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}.acciones-tarea button:hover {
+    opacity: 0.9;
+}.acciones-tarea button.editar {
+    background: #2980b9;
+    color: white;
+}.acciones-tarea button.eliminar {
+    background: #c0392b;
+    color: white;
+}.formulario-edicion {
+    /*display: flex;*/
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px; /* Espacio entre el contenido y el formulario */
+}.formulario-edicion input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}.flex {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+}
