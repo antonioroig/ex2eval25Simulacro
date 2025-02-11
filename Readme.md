@@ -8,12 +8,6 @@ Trabajaremos sobre el fichero app.js.
 Los estilos ya están definidos y hay que incluirlos en index.html.
 Tenemos un array global de objetos tarea en la app
 
-**En el evento DOMContentLoaded se deberá:**
- 1. Establecer los eventos con los correspondientes botones de la app
- 2. Cargar datos guardados en LocalStorage si los hubiere
- 3. renderizarTareas()
- 4. Definir eventos submit y cancel del formulario 'formulario-tarea' para añadir nuevas tareas
-
 
 ## Tareas de evaluación:
 
@@ -28,15 +22,14 @@ Tenemos un array global de objetos tarea en la app
 * Almacenar la `descripcion` y la `fecha` como propiedades del objeto.
 * Incluir una propiedad `completada` que se inicialice en `false`.
 * Incluir un método `modificar(nuevaDesc, nuevaFecha)` que permita cambiar la descripción y la fecha de una tarea existente.
-* **Objetivo:** Evaluar la comprensión de la creación de objetos, el uso de constructores, la asignación de propiedades, la inclusión de métodos y el uso de prototipos en JavaScript.
 
-**2. Crea una función `agregarTarea(descripcion, fecha)` que:** (1 punto)
 
-* Cree una nueva instancia de `Tarea` utilizando la función constructora definida en la tarea 1.
-* Le añada una nueva propiedad id que se asigne de la variable global idCounter (incrementándola).
+**2. Crea una función `agregarTarea(nuevaTarea)` que:** (1 punto)
+
+* Le añada una nueva propiedad id a la nueva tarea que se asigne de la variable global idCounter (incrementándola).
 * Le añada una nueva propiedad completada que se establezca a false y sirva para "tachar la tarea".
 * Agregue la nueva tarea al array `tareas`.
-* **Objetivo:** Evaluar la capacidad de crear instancias de objetos, utilizar arrays y aplicar conceptos de programación orientada a objetos.
+
 
 **3. Implementa una función `renderizarTareas()` que:** (4 puntos)
 
@@ -46,18 +39,37 @@ Tenemos un array global de objetos tarea en la app
 # Nótese que el div con clase "contenido-tarea" puede tener una clase adicional ya definida tarea-completada
 # Esta clase haría que el texto de la tarea aparezca tachado CUANDO SE HAGA CLICK SOBRE ÉSE TEXTO. 
 ```html
-<li class="flex">
-  <div class="contenido-tarea">
-      <h3 class="tarea-title">Descripción de la tarea</h3>
-      <p class="tarea-date">Fecha de la tarea</p>
-  </div>
-  <div class="acciones-tarea">
+<ul id="lista-tareas">
+  <li class="flex">
+    <div class="contenido-tarea">
+      <h3 class="descripcion-tarea">delectus aut autem</h3>
+      <p>11/2/2025</p>
+    </div>
+    <div class="acciones-tarea">
       <button class="editar">Editar</button>
-      <button class="eliminar">Eliminar</button>
-  </div>
-</li>
+      <button class="borrar">Eliminar</button>
+    </div>
+  </li>
+  <li class="flex">           <!-- Tarea tachada, class tarea-completada -->
+    <div class="contenido-tarea tarea-completada">
+      <h3 class="descripcion-tarea">quis ut nam facilis et officia qui</h3>
+      <p>11/2/2025</p>
+    </div>
+    <div class="acciones-tarea">
+      <button class="editar">Editar</button>
+      <button class="borrar">Eliminar</button>
+    </div>
+    <div>               <!-- Formulario de edición insertado en este caso -->
+      <form class="formulario-edicion"></form>
+    </div>
+  </li>
+  <li class="flex"></li>
+  <li class="flex"></li>
+</ul>
 ```
 [La aplicación debe verse así](imagenes/listadoTareas.png)
+[Vídeo funcionamiento de la app](https://gvaedu-my.sharepoint.com/:v:/g/personal/a_roighernandez_edu_gva_es/EciBGPlYLSpOmh3TmX-reWEBeSoTw3xej51Q6V36B20Q1Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=jLc03q)
+
 **4. Implementa las siguientes funciones asíncronas:** (4 puntos)
 
 * **`cargarTareasDesdeAPI()`:** (1.5 puntos)
@@ -71,7 +83,7 @@ Tenemos un array global de objetos tarea en la app
 * **`guardarTareasEnAPI()`:** (1.5 puntos)
     * Debe enviar las tareas del array `tareas` a la API REST `https://jsonplaceholder.typicode.com/todos` para guardarlas.
     * Envía los datos en formato JSON en el cuerpo de la petición.
-    * No va a guardarse nada en esa API de ejemplo, pero escribe la función como si lo fuera a hacer.
+    * No va a guardarse nada en esa API fake de ejemplo, pero escribe la función como si lo fuera a hacer.
     * **Consideraciones:**
         * Usa `fetch` para la petición a la API.
         * Maneja la respuesta asíncrona de la API.
@@ -84,3 +96,12 @@ Tenemos un array global de objetos tarea en la app
         * Usa `fetch` para la petición a la API.
         * Maneja la respuesta asíncrona de la API.
 
+**DOMContentLoaded será el evento que se usará a modo de programa principal. En el evento DOMContentLoaded se deberá:**
+ 1. Establecer los eventos con los correspondientes botones de la app
+ 2. Cargar datos guardados en LocalStorage si los hubiere
+ 3. Configurar eventos de los botones
+ 4. renderizarTareas()
+ 5. Definir eventos submit y cancel necesarios
+
+**Se desarrollarán las funciones manejadoras de eventos necesarias**
+ 
